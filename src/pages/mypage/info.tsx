@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.png';
 const MypageInfo = () => {
   return (
     <>
-      <TabContainer />
+      <TabContainer className='mt-[10px]' />
       <InfoForm />
       <div
         className='
