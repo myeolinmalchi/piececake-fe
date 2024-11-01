@@ -40,6 +40,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:18.3.1"],\
           ["react-redux", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:9.1.2"],\
           ["react-router-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:6.27.0"],\
+          ["tailwind-merge", "npm:2.5.4"],\
           ["tailwindcss", "npm:3.4.14"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["typescript-eslint", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:8.12.1"],\
@@ -1296,6 +1297,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:18.3.1"],\
           ["react-redux", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:9.1.2"],\
           ["react-router-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:6.27.0"],\
+          ["tailwind-merge", "npm:2.5.4"],\
           ["tailwindcss", "npm:3.4.14"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["typescript-eslint", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:8.12.1"],\
@@ -3411,6 +3413,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-10c0.zip/node_modules/supports-preserve-symlinks-flag/",\
         "packageDependencies": [\
           ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tailwind-merge", [\
+      ["npm:2.5.4", {\
+        "packageLocation": "../../.yarn/berry/cache/tailwind-merge-npm-2.5.4-cdd9f9e9ac-10c0.zip/node_modules/tailwind-merge/",\
+        "packageDependencies": [\
+          ["tailwind-merge", "npm:2.5.4"]\
         ],\
         "linkType": "HARD"\
       }]\
