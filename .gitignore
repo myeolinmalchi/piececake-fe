@@ -33,6 +33,7 @@ dist-ssr
 !.yarn/sdks
 !.yarn/versions
 
-# etd
+# etc
 .vim/*
 .fdignore
+*.tsbuildinfo
