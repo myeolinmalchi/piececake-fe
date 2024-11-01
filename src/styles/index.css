@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CHAB';
+  src: url('../assets/fonts/chab.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumSquare Neo';
+  src: url('../assets/fonts/NanumSquareNeo-Variable.woff') format('woff');
+}
