@@ -1,4 +1,4 @@
-import Tab from './Tab';
+import MypageTab from './MypageTab';
 import { twMerge } from 'tailwind-merge';
 
 interface TabContainerProps {
@@ -32,7 +32,7 @@ const TabContainer = ({ className }: TabContainerProps) => {
       )}
     >
       {tabs.map((props) => (
-        <Tab {...props} />
+        <MypageTab {...props} />
       ))}
     </div>
   );

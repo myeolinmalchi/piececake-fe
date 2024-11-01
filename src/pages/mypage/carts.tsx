@@ -1,8 +1,6 @@
-import TabContainer from '../../components/pages/mypage/TabContainer';
-import logo from '../../assets/images/logo.png';
 import { useState } from 'react';
-import CartItem from '../../components/pages/mypage/carts/CartItem';
-import SubmitButton from '../../components/common/buttons/SubmitButton';
+import { CartItem, SubmitButton, TabContainer } from 'src/components';
+import logo from 'assets/images/logo.png';
 
 const MypageCarts = () => {
   const [items] = useState([

@@ -1,7 +1,6 @@
-import TabContainer from '../../components/pages/mypage/TabContainer';
-import logo from '../../assets/images/logo.png';
+import { TabContainer, OrderItem } from 'src/components';
+import logo from 'assets/images/logo.png';
 import { useState } from 'react';
-import OrderItem from '../../components/pages/mypage/orders/OrderItem';
 
 const MypageOrders = () => {
   const [items] = useState([

@@ -1,5 +1,4 @@
-import AccountContainer from '../../components/pages/accounts/common/AccountContainer';
-import LoginForm from '../../components/pages/accounts/login/LoginForm';
+import { AccountContainer, LoginForm } from 'src/components';
 
 const Login = () => {
   return (

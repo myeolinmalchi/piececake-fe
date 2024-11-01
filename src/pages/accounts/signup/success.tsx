@@ -1,11 +1,11 @@
-import Success from '../../../components/pages/accounts/signup/Success';
+import { SignupSuccess } from 'src/components';
 
-const SignupSuccess = () => {
+const Success = () => {
   return (
     <>
-      <Success />
+      <SignupSuccess />
     </>
   );
 };
 
-export default SignupSuccess;
+export default Success;

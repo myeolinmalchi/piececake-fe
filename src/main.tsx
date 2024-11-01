@@ -1,12 +1,18 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './styles/index.css';
-import './styles/reset.css';
+import 'styles/index.css';
+import 'styles/reset.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { MypageCarts, MypageInfo, MypageOrders } from './pages/mypage';
-import { Signup, Success, Login } from './pages/accounts';
-import Main from './pages/main';
-import Layout from './components/layouts';
+import Layout from 'components/layouts';
+import {
+  MypageCarts,
+  MypageInfo,
+  MypageOrders,
+  Signup,
+  SignupSuccess,
+  Login,
+  Main,
+} from 'src/pages';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +38,7 @@ const router = createBrowserRouter([
               },
               {
                 path: 'success',
-                element: <Success />,
+                element: <SignupSuccess />,
               },
             ],
           },

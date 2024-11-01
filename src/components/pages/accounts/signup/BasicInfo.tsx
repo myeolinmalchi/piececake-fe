@@ -1,6 +1,4 @@
-import SubmitButton from '../../../common/buttons/SubmitButton';
-import AccountContainer from '../common/AccountContainer';
-import InputField from '../../../common/forms/InputField';
+import { SubmitButton, AccountContainer, InputField } from 'src/components';
 
 interface SignupBasicInfoProps {
   onSubmit?: () => void;

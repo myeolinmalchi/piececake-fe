@@ -1,6 +1,5 @@
-import TabContainer from '../../components/pages/mypage/TabContainer';
-import InfoForm from '../../components/pages/mypage/info/InfoForm';
-import logo from '../../assets/images/logo.png';
+import { TabContainer, InfoForm } from 'src/components';
+import logo from 'assets/images/logo.png';
 
 const MypageInfo = () => {
   return (

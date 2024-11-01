@@ -1,5 +1,4 @@
-import SubmitButton from '../../../common/buttons/SubmitButton';
-import AccountContainer from '../common/AccountContainer';
+import { SubmitButton, AccountContainer } from 'src/components';
 
 interface SignupTermsProps {
   onSubmit?: () => void;

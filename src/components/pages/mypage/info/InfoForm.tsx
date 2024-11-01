@@ -1,5 +1,4 @@
-import InputField from '../../../common/forms/InputField';
-import SubmitButton from '../../../common/buttons/SubmitButton';
+import { InputField, SubmitButton } from 'src/components';
 
 const InfoForm = () => {
   return (

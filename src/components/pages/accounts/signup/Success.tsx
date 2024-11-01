@@ -1,9 +1,8 @@
-import SubmitButton from '../../../common/buttons/SubmitButton';
-import AccountContainer from '../common/AccountContainer';
+import { SubmitButton, AccountContainer } from 'src/components';
 import { useNavigate } from 'react-router-dom';
 import muffin from '../../../../assets/images/muffin.png';
 
-const Success = () => {
+const SignupSuccess = () => {
   const navigate = useNavigate();
   return (
     <AccountContainer
@@ -24,4 +23,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default SignupSuccess;
