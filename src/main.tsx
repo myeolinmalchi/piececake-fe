@@ -12,6 +12,8 @@ import {
   SignupSuccess,
   Login,
   Main,
+  StoreSearch,
+  StoreDetail,
 } from 'src/pages';
 
 const router = createBrowserRouter([
@@ -58,6 +60,19 @@ const router = createBrowserRouter([
           {
             path: 'orders',
             element: <MypageOrders />,
+          },
+        ],
+      },
+      {
+        path: '/stores',
+        children: [
+          {
+            path: '',
+            element: <StoreSearch />,
+          },
+          {
+            path: ':id',
+            element: <StoreDetail />,
           },
         ],
       },
