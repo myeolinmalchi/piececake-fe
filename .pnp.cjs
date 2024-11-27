@@ -38,13 +38,15 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:18.3.1"],\
+          ["react-kakao-maps-sdk", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:1.1.27"],\
           ["react-redux", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:9.1.2"],\
           ["react-router-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:6.27.0"],\
           ["tailwind-merge", "npm:2.5.4"],\
           ["tailwindcss", "npm:3.4.14"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["typescript-eslint", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:8.12.1"],\
-          ["vite", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.4.10"]\
+          ["vite", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.4.10"],\
+          ["zustand", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.0.1"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -54,6 +56,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@alloc-quick-lru-npm-5.2.0-eb83517088-10c0.zip/node_modules/@alloc/quick-lru/",\
         "packageDependencies": [\
           ["@alloc/quick-lru", "npm:5.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@babel/runtime", [\
+      ["npm:7.26.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@babel-runtime-npm-7.26.0-9afa3c4ef6-10c0.zip/node_modules/@babel/runtime/",\
+        "packageDependencies": [\
+          ["@babel/runtime", "npm:7.26.0"],\
+          ["regenerator-runtime", "npm:0.14.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1295,13 +1307,15 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:18.3.1"],\
+          ["react-kakao-maps-sdk", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:1.1.27"],\
           ["react-redux", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:9.1.2"],\
           ["react-router-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:6.27.0"],\
           ["tailwind-merge", "npm:2.5.4"],\
           ["tailwindcss", "npm:3.4.14"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["typescript-eslint", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:8.12.1"],\
-          ["vite", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.4.10"]\
+          ["vite", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.4.10"],\
+          ["zustand", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.0.1"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2337,6 +2351,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["kakao.maps.d.ts", [\
+      ["npm:0.1.40", {\
+        "packageLocation": "../../.yarn/berry/cache/kakao.maps.d.ts-npm-0.1.40-31fc1b5fb8-10c0.zip/node_modules/kakao.maps.d.ts/",\
+        "packageDependencies": [\
+          ["kakao.maps.d.ts", "npm:0.1.40"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["keyv", [\
       ["npm:4.5.4", {\
         "packageLocation": "../../.yarn/berry/cache/keyv-npm-4.5.4-4c8e2cf7f7-10c0.zip/node_modules/keyv/",\
@@ -3040,6 +3063,34 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-kakao-maps-sdk", [\
+      ["npm:1.1.27", {\
+        "packageLocation": "../../.yarn/berry/cache/react-kakao-maps-sdk-npm-1.1.27-ecc5e96aad-10c0.zip/node_modules/react-kakao-maps-sdk/",\
+        "packageDependencies": [\
+          ["react-kakao-maps-sdk", "npm:1.1.27"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:1.1.27", {\
+        "packageLocation": "./.yarn/__virtual__/react-kakao-maps-sdk-virtual-eec3dbe927/3/.yarn/berry/cache/react-kakao-maps-sdk-npm-1.1.27-ecc5e96aad-10c0.zip/node_modules/react-kakao-maps-sdk/",\
+        "packageDependencies": [\
+          ["react-kakao-maps-sdk", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:1.1.27"],\
+          ["@babel/runtime", "npm:7.26.0"],\
+          ["@types/react", "npm:18.3.12"],\
+          ["@types/react-dom", "npm:18.3.1"],\
+          ["kakao.maps.d.ts", "npm:0.1.40"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-redux", [\
       ["npm:9.1.2", {\
         "packageLocation": "../../.yarn/berry/cache/react-redux-npm-9.1.2-8af4985431-10c0.zip/node_modules/react-redux/",\
@@ -3135,6 +3186,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["readdirp", "npm:3.6.0"],\
           ["picomatch", "npm:2.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["regenerator-runtime", [\
+      ["npm:0.14.1", {\
+        "packageLocation": "../../.yarn/berry/cache/regenerator-runtime-npm-0.14.1-a6c97c609a-10c0.zip/node_modules/regenerator-runtime/",\
+        "packageDependencies": [\
+          ["regenerator-runtime", "npm:0.14.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3784,6 +3844,36 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/yocto-queue-npm-0.1.0-c6c9a7db29-10c0.zip/node_modules/yocto-queue/",\
         "packageDependencies": [\
           ["yocto-queue", "npm:0.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zustand", [\
+      ["npm:5.0.1", {\
+        "packageLocation": "../../.yarn/berry/cache/zustand-npm-5.0.1-bbf1cd61e6-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "npm:5.0.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/zustand-virtual-899538e226/3/.yarn/berry/cache/zustand-npm-5.0.1-bbf1cd61e6-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "virtual:808f1135a8335b457a599507db6af83cea5526c9f9518822ccf88653ba767feda1c843404ccde648efbbf8b9a89b8ee2f428319e5e3df3474c98e662b253bb27#npm:5.0.1"],\
+          ["@types/immer", null],\
+          ["@types/react", "npm:18.3.12"],\
+          ["@types/use-sync-external-store", null],\
+          ["immer", null],\
+          ["react", "npm:18.3.1"],\
+          ["use-sync-external-store", null]\
+        ],\
+        "packagePeers": [\
+          "@types/immer",\
+          "@types/react",\
+          "@types/use-sync-external-store",\
+          "immer",\
+          "react",\
+          "use-sync-external-store"\
         ],\
         "linkType": "HARD"\
       }]\
