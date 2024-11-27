@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const MypageNav = () => {
   const { pathname } = useLocation();
@@ -10,7 +9,7 @@ const MypageNav = () => {
         className={`
           relative
           w-[148px] h-[36px] rounded-[48px]
-          bg-[#FF8E7A] shadow-mypageButton
+          bg-[#FF8E7A] shadow-button
           font-['NanumSquare_Neo'] text-[14px] font-[400] text-white
         `}
       >

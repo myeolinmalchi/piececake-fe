@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <div
       className={`
-        w-full min-h-[100vh] pt-[72px] pb-[80px]
+        w-full min-h-[100vh] pt-[72px]
         bg-cover bg-center
         bg-[url('/images/background.png')]
         flex flex-col items-center justify-start

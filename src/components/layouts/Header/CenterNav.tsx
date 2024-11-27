@@ -1,6 +1,39 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+const NavLink = ({
+  label,
+  to,
+  activated,
+}: {
+  label: string;
+  to: string;
+  activated?: boolean;
+}) => {
+  return (
+    <Link
+      to={to}
+      className='
+        flex-1 text-center relative
+        h-full flex items-center justify-center
+      '
+    >
+      {label}
+      {activated && (
+        <div
+          className='
+            absolute overflow-hidden
+            w-[100px] bottom-0
+            left-1/2 translate-x-[-50%]
+            border-b-[#FFF] border-b-[2px]
+          '
+        ></div>
+      )}
+    </Link>
+  );
+};
 
 const CenterNav = () => {
+  const { pathname } = useLocation();
   return (
     <div
       className={`
@@ -10,17 +43,19 @@ const CenterNav = () => {
         font-['NanumSquare_Neo'] text-[14px] font-[400] text-white
       `}
     >
-      <Link to='/' className='flex-1 text-center'>
-        홈
-      </Link>
+      <NavLink to='/' label='홈' activated={pathname === '/'} />
       <div className='border-l-[1px] border-l-white h-[16px]'></div>
-      <Link to='/' className='flex-1 text-center'>
-        주문하기
-      </Link>
-      <div className='border-l-[1px] border-l-white h-[16px]'></div>
-      <Link to='/mypage/carts' className='flex-1 text-center'>
-        장바구니
-      </Link>
+      <NavLink
+        to='/stores'
+        label='주문하기'
+        activated={pathname.startsWith('/stores')}
+      />
+      <div className='border-l-[1px] border-l-white h-[16px] relative'></div>
+      <NavLink
+        to='/mypage/carts'
+        label='장바구니'
+        activated={pathname === '/mypage/carts'}
+      />
     </div>
   );
 };

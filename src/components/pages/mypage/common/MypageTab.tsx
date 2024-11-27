@@ -26,7 +26,7 @@ const Tab = ({ path, label }: TabProps) => {
       to={path}
       className='
         w-[120px] h-[50px] rounded-[40px] bg-[#FF8E7A]
-        shadow-mypageButton flex justify-center items-center
+        shadow-button flex justify-center items-center
         text-[16px] text-[#FFF]
       '
     >
