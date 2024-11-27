@@ -6,8 +6,8 @@ const Main = () => {
   return (
     <div
       className='
-      mt-[80px] px-[160px] flex items-center justify-center gap-[120px]
-    '
+        mt-[80px] px-[160px] flex items-center justify-center gap-[120px]
+      '
     >
       <div
         className='
@@ -47,7 +47,7 @@ const Main = () => {
             계정 만들기
           </Link>
           <Link
-            to='/'
+            to='/stores'
             className='
               px-[18px] py-[14px] rounded-[6px]
               border-[1px_solid #E1E4ED]
