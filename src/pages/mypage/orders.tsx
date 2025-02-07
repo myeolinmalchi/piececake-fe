@@ -1,66 +1,18 @@
 import { TabContainer, OrderItem } from 'src/components';
 import logo from 'assets/images/logo.png';
-import { useState } from 'react';
+import useOrders from 'src/hooks/accounts/useOrders';
+import { useAuthStore } from 'stores/user/auth';
+import { Navigate } from 'react-router-dom';
 
 const MypageOrders = () => {
-  const [items] = useState([
-    {
-      name: 'Designed Cake',
-      store: '앱티브 케이크 하우스',
-      basePrice: 20000,
-      quantity: 1,
-      date: '2024.10.30',
-      options: [
-        {
-          name: 'option1',
-          price: 1000,
-        },
-        {
-          name: 'option2',
-          price: 2000,
-        },
-      ],
-    },
-    {
-      name: 'Designed Cake',
-      store: '앱티브 케이크 하우스',
-      basePrice: 20000,
-      quantity: 1,
-      date: '2024.10.30',
-      options: [
-        {
-          name: 'option1',
-          price: 1000,
-        },
-        {
-          name: 'option2',
-          price: 2000,
-        },
-      ],
-    },
-    {
-      name: 'Designed Cake',
-      store: '앱티브 케이크 하우스',
-      basePrice: 20000,
-      quantity: 3,
-      date: '2024.10.30',
-      options: [
-        {
-          name: 'option1',
-          price: 1000,
-        },
-        {
-          name: 'option2',
-          price: 2000,
-        },
-      ],
-    },
-  ]);
+  const { items } = useOrders();
+  const { accessToken, userId } = useAuthStore();
+  if (!accessToken || !userId) return <Navigate to='/accounts/login' />;
 
   return (
     <div
       className='
-        w-[862px] mt-[10px]
+        w-[862px] mt-[10px] mb-[120px]
         flex flex-col items-center justify-start
       '
     >

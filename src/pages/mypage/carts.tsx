@@ -1,66 +1,18 @@
-import { useState } from 'react';
 import { CartItem, SubmitButton, TabContainer } from 'src/components';
 import logo from 'assets/images/logo.png';
+import useCart from 'src/hooks/accounts/useCart';
+import { useAuthStore } from 'stores/user/auth';
+import { Navigate } from 'react-router-dom';
 
 const MypageCarts = () => {
-  const [items] = useState([
-    {
-      name: 'Designed Cake',
-      store: '앱티브 케이크 하우스',
-      basePrice: 20000,
-      quantity: 1,
-      options: [
-        {
-          name: 'option1',
-          price: 1000,
-        },
-        {
-          name: 'option2',
-          price: 2000,
-        },
-      ],
-    },
-    {
-      name: 'Designed Cake',
-      store: '앱티브 케이크 하우스',
-      basePrice: 20000,
-      quantity: 1,
-      options: [
-        {
-          name: 'option1',
-          price: 1000,
-        },
-        {
-          name: 'option2',
-          price: 2000,
-        },
-      ],
-    },
-    {
-      name: 'Designed Cake',
-      store: '앱티브 케이크 하우스',
-      basePrice: 20000,
-      quantity: 3,
-      options: [
-        {
-          name: 'option1',
-          price: 1000,
-        },
-        {
-          name: 'option2',
-          price: 2000,
-        },
-      ],
-    },
-  ]);
+  const { items, handleDelete } = useCart();
+  const { accessToken, userId } = useAuthStore();
+
+  if (!accessToken || userId === -1) return <Navigate to='/accounts/login' />;
 
   const totalPrice = items
     .reduce((acc, e) => {
-      return (
-        acc +
-        (e.basePrice + e.options.reduce((acc, e) => acc + e.price, 0)) *
-          e.quantity
-      );
+      return acc + e.total * e.quantity;
     }, 0)
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -68,7 +20,7 @@ const MypageCarts = () => {
   return (
     <div
       className='
-        w-[862px] mt-[10px]
+        w-[862px] mt-[10px] mb-[120px]
         flex flex-col items-center justify-start
       '
     >
@@ -86,7 +38,7 @@ const MypageCarts = () => {
       </div>
       <div className='flex flex-col gap-[10px] items-center justify-center w-full'>
         {items.map((item) => (
-          <CartItem {...item} />
+          <CartItem handleDelete={handleDelete(item.orderId)} {...item} />
         ))}
       </div>
       <div

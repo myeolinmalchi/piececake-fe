@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <div
         className='
-          w-full fixed top-0 box-border 
+          w-full absolute top-0 box-border 
           h-[72px] px-[75px] py-[18px] bg-none
           flex justify-between align-center
         '

@@ -4,7 +4,7 @@ const MypageNav = () => {
   const { pathname } = useLocation();
 
   return (
-    <Link to={'/accounts/login'}>
+    <Link to={'/mypage/info'}>
       <button
         className={`
           relative
@@ -14,7 +14,7 @@ const MypageNav = () => {
         `}
       >
         마이페이지
-        {(pathname === '/mypage' || pathname.startsWith('/accounts')) && (
+        {(pathname === '/mypage/info' || pathname.startsWith('/accounts')) && (
           <div
             className='
             absolute overflow-hidden

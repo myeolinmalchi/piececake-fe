@@ -1,10 +1,16 @@
 import InputField from '../../../common/forms/InputField';
 import { Link } from 'react-router-dom';
 import SubmitButton from '../../../common/buttons/SubmitButton';
-import NaverButton from './NaverButton';
-import KakaoButton from './KakaoButton';
+import useLoginForm from 'src/hooks/accounts/useLoginForm';
+import { useAuthStore } from 'stores/user/auth';
+import { Navigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const { handleSubmit, handleId, handlePw, loginForm } = useLoginForm();
+  const { accessToken } = useAuthStore();
+
+  if (accessToken) return <Navigate to='/mypage/info' />;
+
   return (
     <>
       <InputField
@@ -12,6 +18,8 @@ const LoginForm = () => {
         type='email'
         placeholder='pieceofcake@gmail.com'
         className='mt-[48px]'
+        onChange={handleId}
+        value={loginForm.id}
       />
 
       <InputField
@@ -19,6 +27,8 @@ const LoginForm = () => {
         type='password'
         placeholder='your password'
         className='mt-[32px]'
+        onChange={handlePw}
+        value={loginForm.pw}
       />
       <Link
         to='/'
@@ -29,26 +39,15 @@ const LoginForm = () => {
       >
         비밀번호 찾기
       </Link>
-      <SubmitButton className='mt-[48px]'>로그인하기</SubmitButton>
+      <SubmitButton className='mt-[48px]' onClick={handleSubmit}>
+        로그인하기
+      </SubmitButton>
       <span className='text-[#808080] mt-[12px]'>
         신규 사용자이신가요?&nbsp;
         <Link to='/accounts/signup' className='text-[#6295FB]'>
           계정 만들기
         </Link>
       </span>
-      <span className='mt-[40px] text-[#ABABAB] text-[16px]'>
-        OR 소셜 계정으로 로그인
-      </span>
-      <span className='mt-[24px] text-[#23717D] self-start'>소셜 로그인</span>
-      <div
-        className='
-          flex items-center justify-between 
-          w-full gap-[20px] mt-[12px]
-        '
-      >
-        <NaverButton />
-        <KakaoButton />
-      </div>
     </>
   );
 };

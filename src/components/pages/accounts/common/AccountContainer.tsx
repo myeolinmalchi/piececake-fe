@@ -16,7 +16,7 @@ const AccountContainer = ({
       className='
         w-[540px] py-[41px] px-[44px] box-border rounded-[40px]
         lg-white shadow-[0px_4px_35px_0px_rgba(0,0,0,0.08)] bg-white
-        flex flex-col justify-start items-center mt-[64px]
+        flex flex-col justify-start items-center mt-[64px] relative
       '
     >
       <span

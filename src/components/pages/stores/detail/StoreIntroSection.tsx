@@ -37,16 +37,6 @@ const StoreIntroSection = ({ intro, name }: StoreIntroSectionProps) => {
           <span>follow us</span>
         </button>
       </div>
-      <div
-        className='
-          w-full max-w-[1440px] flex items-center justify-between mt-[32px]
-        '
-      >
-        <img className='w-[25%] aspect-square bg-4' src='' alt='' />
-        <img className='w-[25%] aspect-square bg-3' src='' alt='' />
-        <img className='w-[25%] aspect-square bg-4' src='' alt='' />
-        <img className='w-[25%] aspect-square bg-3' src='' alt='' />
-      </div>
     </div>
   );
 };

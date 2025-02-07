@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'CHAB';
-  src: url('../assets/fonts/chab.otf') format('opentype');
-}
+@layer base {
+  @font-face {
+    font-family: 'CHAB';
+    src: url('../assets/fonts/chab.otf') format('opentype');
+  }
 
-@font-face {
-  font-family: 'NanumSquare Neo';
-  src: url('../assets/fonts/NanumSquareNeo-Variable.woff') format('woff');
+  /*
+  @font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('../assets/fonts/NanumSquareNeo-Variable.woff') format('woff');
+  }
+  */
+
+  @media (max-width: 639px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
 }

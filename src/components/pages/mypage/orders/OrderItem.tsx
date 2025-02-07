@@ -1,31 +1,53 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuthStore } from 'stores/user/auth';
+import { CartDetail } from 'types/user/cart';
 
 interface OrderItemProps {
-  name: string;
-  store: string;
-  date: string;
+  orderId: number;
+  cakeName: string;
+  storeName: string;
+  cakeImage: string;
+  date?: string;
   quantity: number;
-  basePrice: number;
-  options: {
-    name: string;
-    price: number;
-  }[];
+  total: number;
 }
 
 const OrderItem = ({
-  name,
-  store,
+  orderId,
+  cakeImage,
+  cakeName,
+  storeName,
   date,
   quantity,
-  basePrice,
-  options,
+  total,
 }: OrderItemProps) => {
   const [opened, setOpened] = useState(false);
-  const totalPrice =
-    `${basePrice + options.reduce((acc, e) => acc + e.price, 0)}`.replace(
-      /\B(?=(\d{3})+(?!\d))/g,
-      ','
-    );
+  const [detail, setDetail] = useState<CartDetail | null>(null);
+  const { accessToken } = useAuthStore();
+
+  useEffect(() => {
+    const run = async () => {
+      const res = await fetch(
+        `http://52.78.143.39:8080/order/detail/${orderId}`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      if (res.ok) {
+        const data = await res.json();
+        setDetail(data);
+      } else {
+        alert('장바구니 상세 정보를 불러오지 못했습니다.');
+      }
+    };
+    if (opened && detail === null) {
+      run();
+    }
+  }, [opened, detail, accessToken]);
 
   return (
     <div
@@ -43,17 +65,17 @@ const OrderItem = ({
         `}
       >
         <img
-          className='w-[84px] h-[84px] rounded-[84px] bg-gray-50'
+          className='w-[84px] h-[84px] rounded-[84px] bg-gray-50 object-cover'
           src=''
           alt=''
         />
         <div className='flex align-start flex-col gap-[4px]'>
-          <span className='text-[#000] text-[16px] font-[800]'>{name}</span>
-          <span className='text-[#000] text-[12px]'>{store}</span>
+          <span className='text-[#000] text-[16px] font-[800]'>{cakeName}</span>
+          <span className='text-[#000] text-[12px]'>{storeName}</span>
         </div>
         <span className='text-[16px] text-black'>{date}</span>
         <span className='text-[16px] text-black'>{quantity}</span>
-        <span className='text-[16px] text-black'>₩{totalPrice}</span>
+        <span className='text-[16px] text-black'>₩ {total}</span>
 
         <button
           onClick={() => setOpened((opened) => !opened)}
@@ -62,12 +84,16 @@ const OrderItem = ({
           상세내역
         </button>
       </div>
-      {opened && (
+      {opened && detail && (
         <>
           <div className='flex justify-between gap-[16px] items-start px-[24px] py-[20px] pb-[16px] w-full'>
-            <img src='' alt='' className='w-[178px] h-[178px] rounded-[8px]' />
+            <img
+              src={cakeImage}
+              alt=''
+              className='w-[178px] h-[178px] rounded-[8px]'
+            />
             <div className='flex flex-col justify-start items-center gap-[6px]'>
-              {options.map(({ name, price }) => (
+              {detail.optionDtos.map(({ value, price }) => (
                 <div
                   className='
                 h-[40px] px-[20px] flex items-center justify-between w-[320px]
@@ -75,14 +101,16 @@ const OrderItem = ({
                 text-[16px] text-white font-[600]
               '
                 >
-                  <span>{name}</span>
+                  <span>{value}</span>
                   <span className={`after:content-['원']`}>
                     {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                   </span>
                 </div>
               ))}
             </div>
-            <div className='flex-1 h-[180px] rounded-[6px] border-[1px] border-[#d8d8d8] bg-[#f9f9f9]'></div>
+            <div className='flex-1 h-[180px] rounded-[6px] border-[1px] border-[#d8d8d8] bg-[#f9f9f9] p-4 text-gray-700'>
+              {detail.memo}
+            </div>
           </div>
           <div className='flex justify-end items-center gap-[16px] px-[20px] pb-[20px] w-full'>
             <span className='text-[rgba(173,173,173,0.87)] text-[12px]'>

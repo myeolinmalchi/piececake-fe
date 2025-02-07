@@ -1,3 +1,5 @@
+import { ChangeEvent, ReactNode } from 'react';
+
 interface InputFieldProps {
   label?: string;
   placeholder?: string;
@@ -7,6 +9,11 @@ interface InputFieldProps {
   name?: string;
   buttonLabel?: string;
   buttonOnClick?: () => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  readonly?: boolean;
+  tabindex?: number;
+  children?: ReactNode;
+  value?: string | number;
 }
 
 const InputField = ({
@@ -18,6 +25,11 @@ const InputField = ({
   name,
   buttonLabel,
   buttonOnClick,
+  onChange,
+  readonly,
+  tabindex,
+  children,
+  value,
 }: InputFieldProps) => {
   return (
     <>
@@ -28,11 +40,17 @@ const InputField = ({
         <div
           className={`
             w-full pl-[24px] pr-[18px] py-0 rounded-[9px] h-[52px]
-            border-[#FF8E7A] border-[1px] bg-white
+            border-[1px] bg-white relative
             box-border flex items-center
+            focus-within:border-[#FF8E7A]
           `}
         >
+          {children}
           <input
+            value={value}
+            readOnly={readonly}
+            tabIndex={tabindex}
+            onChange={onChange}
             className={`
               text-[12px] text-[#000]
               placeholder:text-[#808080] w-full flex-1

@@ -1,12 +1,8 @@
+import { useStoreSearchStore } from 'stores/stores/list';
 import StoreItem from './StoreItem';
-import { useStoreSearchStore } from 'stores/store';
 
 const StoreList = () => {
-  const {
-    stores,
-    currentIdx,
-    actions: { setCurrentIdx },
-  } = useStoreSearchStore();
+  const { stores, currentIdx, setCurrentIdx } = useStoreSearchStore();
 
   return (
     <div

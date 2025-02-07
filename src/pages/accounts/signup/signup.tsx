@@ -1,27 +1,39 @@
-import { useState } from 'react';
 import {
   SignupTerms,
   SignupBasicInfo,
   SignupAddressInfo,
 } from 'src/components';
-import { useNavigate } from 'react-router-dom';
+import useSignupForm from 'src/hooks/accounts/useSignupForm';
+import { SignupSuccess } from '.';
 
 const Signup = () => {
-  const [step, setStep] = useState(0);
-  const navigate = useNavigate();
-
-  const nextStep = () => {
-    console.log(step);
-    if (step < 2) {
-      setStep((step) => step + 1);
-    }
-  };
+  const {
+    handleSubmit,
+    handleInput,
+    signupForm,
+    addressOpened,
+    toggleAddress,
+    setAddress,
+    step,
+    nextStep,
+  } = useSignupForm();
 
   if (step === 0) return <SignupTerms onSubmit={nextStep} />;
-  if (step === 1) return <SignupBasicInfo onSubmit={nextStep} />;
-  return (
-    <SignupAddressInfo onSubmit={() => navigate('/accounts/signup/success')} />
-  );
+  if (step === 1)
+    return <SignupBasicInfo handleInput={handleInput} onSubmit={nextStep} />;
+  if (step === 2)
+    return (
+      <SignupAddressInfo
+        toggleAddress={toggleAddress}
+        addressOpened={addressOpened}
+        address={signupForm.address}
+        handleDetailAddress={handleInput('detailAddress')}
+        setAddress={setAddress}
+        onSubmit={handleSubmit}
+      />
+    );
+
+  return <SignupSuccess />;
 };
 
 export default Signup;

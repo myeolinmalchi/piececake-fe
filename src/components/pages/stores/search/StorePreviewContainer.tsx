@@ -1,5 +1,5 @@
-import { useStoreSearchStore } from 'stores/store';
 import { Link } from 'react-router-dom';
+import { useStoreSearchStore } from 'stores/stores/list';
 
 const StorePreviewContainer = () => {
   const { stores, currentIdx: idx } = useStoreSearchStore();

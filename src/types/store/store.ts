@@ -1,22 +1,24 @@
-import { StoreProductBase } from './product.ts';
-
 interface StoreBase {
-  logo?: string;
+  storeId: number;
   name: string;
-  rating: number;
+
+  longitude: number;
+  latitude: number;
+
   distance: number;
-  position: {
-    lat: number;
-    lng: number;
-  };
-  images?: string[];
-  id: number;
+  cakeImages: string[];
 }
 
-interface StoreDetail extends StoreBase {
-  backgroundImage?: string;
-  description?: string;
-  items: StoreProductBase[];
+interface StoreDetail {
+  storeId: number;
+  name: string;
+
+  address: string;
+  contact: string;
+  etcStoreInfo: string;
+  snsLink: string;
+  bannerImage: string;
+  logoImage?: string;
 }
 
 export type { StoreBase, StoreDetail };

@@ -1,4 +1,5 @@
-import temp from 'assets/images/temp.png';
+import main1 from 'assets/images/main/main-1.png';
+import main2 from 'assets/images/main/main-2.png';
 import logo from 'assets/images/logo.png';
 import { Link } from 'react-router-dom';
 
@@ -27,13 +28,16 @@ const Main = () => {
         </span>
         <span
           className={`
-            text-[#A6C1C5] text-[16px] leading-[24px]
+            text-[#23717D] text-[16px] leading-[24px]
             mb-[32px]
           `}
         >
-          Lorem ipsum dolor sit amet consectetur adipiscing elidolor
+          특별한 날을 더욱 의미 있게 만들어 보세요. 당신만의 맞춤
+          케이크를제공합니다.
           <br />
-          mattis sit phasellus mollis sit aliquam sit nullam neques.
+          세상에 단 하나뿐인 레터링 케이크큰 소중한 기념과 사랑의 나눔을 담아,
+          <br />
+          당신의 특별한 순간을 더욱 빛나게 해줄 거예요!
         </span>
         <div className='flex items-center justify-start gap-[16px]'>
           <Link
@@ -41,7 +45,7 @@ const Main = () => {
             className='
               px-[18px] py-[14px] rounded-[6px]
               shadow-[0px_1px_4px_0px_rgba(25,33,61,0.08)]
-              bg-[#A6C1C5] text-[14px] leading-[14px] text-[#FFF] font-[600]
+              bg-[#23717D] text-[14px] leading-[14px] text-[#FFF] font-[600]
             '
           >
             계정 만들기
@@ -60,17 +64,18 @@ const Main = () => {
       </div>
       <div className='relative w-[540px] h-[520px]'>
         <img
-          src={temp}
+          src={main2}
           className='
-            w-[340px] absolute left-0 bottom-0
-            rounded-[8px]
+            w-[328px] absolute left-0 bottom-0 z-10
+            rounded-[8px] shadow-[-9px_9px_20px_5px_rgba(173,158,158,0.37)]
+            object-fit
           '
           alt=''
         />
         <img
-          src={temp}
+          src={main1}
           className='
-            w-[340px] absolute right-0 top-0
+            w-[385px] absolute right-0 top-0
             rounded-[8px] shadow-[0px_5px_15px_0px_rgba(25,33,61,0.11)]
           '
           alt=''

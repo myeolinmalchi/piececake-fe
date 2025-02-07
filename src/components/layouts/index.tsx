@@ -1,15 +1,25 @@
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
+import { useLayoutEffect } from 'react';
+import { useAuthStore } from 'stores/user/auth';
 
 const Layout = () => {
+  const { setAccessToken } = useAuthStore();
+
+  useLayoutEffect(() => {
+    const at = localStorage.getItem('ACCESS_TOKEN');
+    if (at) {
+      setAccessToken(at);
+    }
+  }, []);
+
   return (
     <div
       className={`
-        w-full min-h-[100vh] pt-[72px]
-        bg-cover bg-center
-        bg-[url('/images/background.png')]
+        w-full min-h-[100vh] pt-[72px] bg-top
+        bg-[url('/images/background-long.png')]
         flex flex-col items-center justify-start
-        font-['NanumSquare_Neo'] font-[400]
+        font-['NanumSquareNeo'] font-[400]
       `}
     >
       <Header />

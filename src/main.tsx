@@ -15,6 +15,7 @@ import {
   StoreSearch,
   StoreDetail,
 } from 'src/pages';
+import CakeOptionPage from 'pages/stores/cake/option';
 
 const router = createBrowserRouter([
   {
@@ -72,7 +73,16 @@ const router = createBrowserRouter([
           },
           {
             path: ':id',
-            element: <StoreDetail />,
+            children: [
+              {
+                path: '',
+                element: <StoreDetail />,
+              },
+              {
+                path: 'cakes/:cakeId',
+                element: <CakeOptionPage />,
+              },
+            ],
           },
         ],
       },

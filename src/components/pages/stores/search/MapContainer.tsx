@@ -2,14 +2,25 @@ import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import pin from 'assets/images/pin.png';
 import StoreList from './StoreList';
 import StoreSearchField from './StoreSearchField';
-import { useStoreSearchStore } from 'stores/store';
 import StorePreviewContainer from './StorePreviewContainer';
+import { useStoreSearchStore } from 'stores/stores/list';
+import usePosition from 'src/hooks/stores/usePosition';
 
 const MapContainer = () => {
-  const {
-    stores,
-    actions: { setCurrentIdx },
-  } = useStoreSearchStore();
+  const { stores, currentIdx, setCurrentIdx } = useStoreSearchStore();
+  const { pos } = usePosition();
+
+  const currentStore = currentIdx ? stores[currentIdx] : null;
+  const centerPos = currentStore
+    ? {
+        lat: currentStore.latitude - 0.001,
+        lng: currentStore.longitude,
+      }
+    : (pos ?? {
+        lat: 37.54699,
+        lng: 127.09598,
+      });
+
   return (
     <div
       className='
@@ -19,17 +30,24 @@ const MapContainer = () => {
       '
     >
       <Map
-        center={{
-          lat: 37.54699,
-          lng: 127.09598,
-        }}
+        center={centerPos}
+        isPanto={true}
         className='w-[calc(100%-310px+30px)] h-full rounded-r-[40px] absolute right-0'
         level={3}
       >
-        {stores.map(({ position }, idx) => (
+        {stores.map(({ latitude, longitude }, idx) => (
           <MapMarker
-            position={position}
-            image={{ src: pin, size: { width: 30.8, height: 35.7 } }}
+            position={{
+              lat: latitude,
+              lng: longitude,
+            }}
+            image={{
+              src: pin,
+              size:
+                currentIdx === idx
+                  ? { width: 30.8 * 1.2, height: 35.7 * 1.2 }
+                  : { width: 30.8, height: 35.7 },
+            }}
             onClick={() => setCurrentIdx(idx)}
           />
         ))}
@@ -44,6 +62,13 @@ const MapContainer = () => {
           px-[32px] py-[36px] z-[100]
         '
       >
+        <span
+          className={`
+            font-['CHAB'] text-[48px] text-[#23717D] font-[400] leading-[48px] mb-[24px]
+          `}
+        >
+          가게 찾기
+        </span>
         <StoreSearchField />
         <StoreList />
       </div>

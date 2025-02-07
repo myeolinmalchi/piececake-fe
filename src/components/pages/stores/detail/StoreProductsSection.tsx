@@ -1,11 +1,11 @@
-import { StoreProductBase } from 'types/store/product';
 import ProductCard from './ProductCard';
+import { CakeBase } from 'types/store/cake';
 
 interface StoreProductsSectionProps {
-  products: StoreProductBase[];
+  cakes: CakeBase[];
 }
 
-const StoreProductsSection = ({ products }: StoreProductsSectionProps) => {
+const StoreProductsSection = ({ cakes }: StoreProductsSectionProps) => {
   return (
     <div className='w-full flex flex-col items-center justify-start py-[80px] relative'>
       <span
@@ -27,8 +27,8 @@ const StoreProductsSection = ({ products }: StoreProductsSectionProps) => {
           gap-x-[24px] gap-y-[40px] mt-[48px]
         '
       >
-        {products.map((product) => (
-          <ProductCard product={product} />
+        {cakes.map((cake) => (
+          <ProductCard cake={cake} />
         ))}
       </div>
     </div>

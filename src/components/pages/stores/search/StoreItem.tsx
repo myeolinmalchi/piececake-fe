@@ -8,7 +8,7 @@ interface StoreItemProps {
 }
 
 const StoreItem = ({ store, selected, onClick }: StoreItemProps) => {
-  const { name, rating, distance } = store;
+  const { name, distance } = store;
   return (
     <div
       className={twMerge(
@@ -29,8 +29,9 @@ const StoreItem = ({ store, selected, onClick }: StoreItemProps) => {
         '
       >
         <span className='text-[16px] text-black w-full text-start'>{name}</span>
-        <span className='text-[10px] text-[#FF8E7A]'>{rating}</span>
-        <span className='text-[10px] text-[#FF8E7A]'>{distance}km</span>
+        <span className='text-[10px] text-[#FF8E7A]'>
+          {distance.toFixed(2)}km
+        </span>
       </div>
     </div>
   );
